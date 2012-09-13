@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "TRViewController.h"
+
 @interface TRAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

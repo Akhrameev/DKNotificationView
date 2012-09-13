@@ -13,6 +13,9 @@
 		83671CB716006CD700447F3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83671CB516006CD700447F3F /* InfoPlist.strings */; };
 		83671CB916006CD700447F3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83671CB816006CD700447F3F /* main.m */; };
 		83671CBD16006CD700447F3F /* TRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83671CBC16006CD700447F3F /* TRAppDelegate.m */; };
+		83671CC816006D6C00447F3F /* TRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83671CC716006D6C00447F3F /* TRViewController.m */; };
+		83671CCC16006D9E00447F3F /* DKNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83671CCA16006D9E00447F3F /* DKNotificationView.m */; };
+		83671CCD16006D9E00447F3F /* pull.png in Resources */ = {isa = PBXBuildFile; fileRef = 83671CCB16006D9E00447F3F /* pull.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		83671CBA16006CD700447F3F /* NotificationView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotificationView-Prefix.pch"; sourceTree = "<group>"; };
 		83671CBB16006CD700447F3F /* TRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRAppDelegate.h; sourceTree = "<group>"; };
 		83671CBC16006CD700447F3F /* TRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRAppDelegate.m; sourceTree = "<group>"; };
+		83671CC616006D6C00447F3F /* TRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRViewController.h; sourceTree = "<group>"; };
+		83671CC716006D6C00447F3F /* TRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRViewController.m; sourceTree = "<group>"; };
+		83671CC916006D9E00447F3F /* DKNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKNotificationView.h; sourceTree = "<group>"; };
+		83671CCA16006D9E00447F3F /* DKNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNotificationView.m; sourceTree = "<group>"; };
+		83671CCB16006D9E00447F3F /* pull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pull.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +80,12 @@
 		83671CB216006CD700447F3F /* NotificationView */ = {
 			isa = PBXGroup;
 			children = (
+				83671CC916006D9E00447F3F /* DKNotificationView.h */,
+				83671CCA16006D9E00447F3F /* DKNotificationView.m */,
 				83671CBB16006CD700447F3F /* TRAppDelegate.h */,
 				83671CBC16006CD700447F3F /* TRAppDelegate.m */,
+				83671CC616006D6C00447F3F /* TRViewController.h */,
+				83671CC716006D6C00447F3F /* TRViewController.m */,
 				83671CB316006CD700447F3F /* Supporting Files */,
 			);
 			path = NotificationView;
@@ -82,6 +94,7 @@
 		83671CB316006CD700447F3F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83671CCB16006D9E00447F3F /* pull.png */,
 				83671CB416006CD700447F3F /* NotificationView-Info.plist */,
 				83671CB516006CD700447F3F /* InfoPlist.strings */,
 				83671CB816006CD700447F3F /* main.m */,
@@ -143,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83671CB716006CD700447F3F /* InfoPlist.strings in Resources */,
+				83671CCD16006D9E00447F3F /* pull.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +169,8 @@
 			files = (
 				83671CB916006CD700447F3F /* main.m in Sources */,
 				83671CBD16006CD700447F3F /* TRAppDelegate.m in Sources */,
+				83671CC816006D6C00447F3F /* TRViewController.m in Sources */,
+				83671CCC16006D9E00447F3F /* DKNotificationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
