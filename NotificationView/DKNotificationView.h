@@ -26,6 +26,7 @@ typedef enum {
 @property (nonatomic, strong) UIView *contentView;
 
 - (id)initWithFrame:(CGRect)frame inView:(UIView *)view;
-- (void)setState:(DKNotificationViewState)state;
+- (void)show;
+- (void)hide;
 
 @end

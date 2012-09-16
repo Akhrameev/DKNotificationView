@@ -29,15 +29,22 @@
         self.frame = self.restingFrame;
         self.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
         
-        self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.frame.size.width, self.frame.size.height - 20)];
+        self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                    20,
+                                                                    self.frame.size.width,
+                                                                    self.frame.size.height - 20)];
         self.contentView.backgroundColor = [UIColor clearColor];
         
         self.state = DKNotificationViewStateResting;
         
-        UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+        UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                                                                            action:@selector(panGesture:)];
         [self addGestureRecognizer:gestureRecognizer];
         
-        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionOld context:NULL];
+        [self addObserver:self
+               forKeyPath:@"frame"
+                  options:NSKeyValueObservingOptionOld
+                  context:NULL];
         
         [view addSubview:self];
     }
@@ -88,7 +95,7 @@
 
 - (void)panGesture:(UIPanGestureRecognizer *)sender {
 	
-    CGPoint translatedPoint;
+    
     [[self layer] removeAllAnimations];
     
     switch ([sender state]) {
@@ -98,14 +105,19 @@
             self.state = DKNotificationViewStateMoving;
             break;
             
-        case UIGestureRecognizerStateChanged:
-            
-            translatedPoint = [sender translationInView:self.superview];
+        case UIGestureRecognizerStateChanged: {
+            CGPoint translatedPoint = [sender translationInView:self.superview];
             translatedPoint = CGPointMake(0, _startPoint.y + translatedPoint.y);
-            if ((translatedPoint.y >= self.activeFrame.origin.y) & (translatedPoint.y <= self.restingFrame.origin.y)) {
-                self.frame = CGRectMake(self.frame.origin.x, translatedPoint.y, self.frame.size.width, self.frame.size.height);
+            if ((translatedPoint.y >= self.activeFrame.origin.y) &
+                (translatedPoint.y <= self.restingFrame.origin.y)) {
+                self.frame = CGRectMake(self.frame.origin.x,
+                                        translatedPoint.y,
+                                        self.frame.size.width,
+                                        self.frame.size.height);
             }
             break;
+        }
+            
             
         case UIGestureRecognizerStateEnded:
             if ([sender velocityInView:self.superview].y < 0) {
@@ -126,6 +138,14 @@
         default:
             break;
     }
+}
+
+- (void)show {
+    [self setState:DKNotificationViewStateActive];
+}
+
+- (void)hide {
+    [self setState:DKNotificationViewStateResting];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
